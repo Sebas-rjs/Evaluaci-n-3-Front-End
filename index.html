@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta de Entradas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body class="bg-info">
+    <header class="container-fluid p-5 bg-primary text-white text-center">
+        <h1>Venta de Entradas Cine</h1>
+    </header>
+    <main class="container-fluid">
+        <div class="row mt-3">
+            <div class="col-4">
+                <form action="" class="card">
+                    <div class="card-header">
+                        <h5>Ingresa tus datos</h5>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <label>Pelicula</label>
+                            <input type="text" class="form-control" id="peli" name="peli" onblur="verificar(this.id)">
+                            <div id="e-peli"></div>
+                        </div>
+                        <div>
+                            <label>Cliente run</label>
+                            <input type="text" class="form-control" id="run" name="run" onblur="verificar(this.id)">
+                            <div id="e-run"></div>
+                        </div>
+                        <div>
+                            <label>Fecha</label>
+                            <input type="date" class="form-control" id="fecha" name="fecha" onblur="verificar(this.id)">
+                            <div id="e-fecha"></div>
+                        </div>
+                        <div>
+                            <label>Correo electrónico</label>
+                            <input type="email" class="form-control" id="email" name="email" onblur="verificar(this.id)">
+                            <div id="e-email"></div>
+                        </div>
+                        <div>
+                            <label>Teléfono</label>
+                            <input type="tel" class="form-control" id="fono" name="fono" onblur="verificar(this.id)">
+                            <div id="e-fono"></div>
+                        </div>
+                        <div>
+                            <label>Cantidad</label>
+                            <input type="number" class="form-control" id="cantidad" name="cantidad" min="1" max="10" onblur="verificar(this.id)">
+                            <div id="e-cantidad"></div>
+                        </div>
+                        <div>
+                            <label>Precio</label>
+                            <input type="number" class="form-control" id="precio" name="precio" step="1000" onblur="verificar(this.id)">
+                            <div id="e-precio"></div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <input type="reset" value="Limpiar" class="btn btn-info">
+                        <input type="button" id="btnGuardar" value="Guardar" class="btn btn-success">
+                    </div>
+                </form>
+            </div>
+            <div class="col-8">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Pelicula</th>
+                                <th>Cliente Run</th>
+                                <th>Fecha</th>
+                                <th>Correo electrónico</th>
+                                <th>Teléfono</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contenido">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="utilidades.js"></script>
+    <script src="funciones.js" type="module"></script>
+    <script>
